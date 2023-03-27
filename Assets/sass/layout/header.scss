@@ -1,0 +1,16 @@
+header {
+    @extend %flex-center;
+    width: 100%;
+    background-color: $blanc;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    & a {
+        position: absolute;
+        left: 4em;
+    }
+
+    & h1 {
+        @include Logo(37px);
+        margin: 0.5em;
+    }
+}

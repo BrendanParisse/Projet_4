@@ -1,0 +1,57 @@
+.liste_card {
+    @extend %grid-center;
+    @include grid-template-set-columns(4);
+    gap: 2em;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    & .card {
+        position: relative;
+        border-radius: 1em;
+        background-color: $blanc;
+        box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
+
+        .Nouveau {
+            position: absolute;
+            top: 0.5em;
+            right: 0.8em;
+            background-color: $vert-clair;
+            color: $vert-foncé;
+            padding: 0.5em 0.9em 0.5em 0.9em;
+            font-size: 14px;
+            border-radius: 0.2em;
+            font-weight: 600;
+        }
+
+        .Photo_2 {
+            object-position: 50% 60%;
+        }
+
+        img {
+            object-position: bottom;
+            object-fit: cover;
+            width: 100%;
+            border-radius: 1em 1em 0em 0em;
+            height: 174px;
+        }
+
+
+        .card_description {
+            padding-left: 0.5em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            h2 {
+                margin: 0.5em 0px 0.5em 0px;
+                font-size: 18px;
+            }
+
+            p {
+                margin-top: 0px;
+                font-size: 17px;
+            }
+        }
+    }
+}

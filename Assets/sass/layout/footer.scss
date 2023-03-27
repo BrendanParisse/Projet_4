@@ -1,0 +1,29 @@
+footer {
+    width: 100%;
+    background-color: $gris-foncé;
+    color: white;
+
+    .footer_description {
+        margin: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 8em;
+        gap: 2em;
+        font-family: Roboto;
+        margin-right: 8em;
+        list-style: none;
+        text-decoration: none;
+
+        a {
+            display: flex;
+            text-decoration: none;
+            color: white;
+            align-items: center;
+        }
+
+        h1 {
+            @include Logo(18px);
+        }
+    }
+}

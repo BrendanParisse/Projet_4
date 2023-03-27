@@ -1,0 +1,323 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+main .fonctionnement .liste_fonctionnement, .liste_card {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+main .fonctionnement .liste_fonctionnement li a, main .localisation, header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .presentation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  padding: 1em 1.5em;
+  color: #FFFFFF;
+  transition: 250ms;
+  text-decoration: none;
+}
+.btn--gradient {
+  background: linear-gradient(#FF79DA, #9356DC);
+}
+.btn--radius {
+  border-radius: 2em;
+}
+.btn:hover {
+  opacity: 0.8;
+  box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
+}
+
+.btn_commander {
+  position: relative;
+  top: 3em;
+}
+
+.liste_card {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.liste_card .card {
+  position: relative;
+  border-radius: 1em;
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
+}
+.liste_card .card .Nouveau {
+  position: absolute;
+  top: 0.5em;
+  right: 0.8em;
+  background-color: #99E2D0;
+  color: #008766;
+  padding: 0.5em 0.9em 0.5em 0.9em;
+  font-size: 14px;
+  border-radius: 0.2em;
+  font-weight: 600;
+}
+.liste_card .card .Photo_2 {
+  object-position: 50% 60%;
+}
+.liste_card .card img {
+  object-position: bottom;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 1em 1em 0em 0em;
+  height: 174px;
+}
+.liste_card .card .card_description {
+  padding-left: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.liste_card .card .card_description h2 {
+  margin: 0.5em 0px 0.5em 0px;
+  font-size: 18px;
+}
+.liste_card .card .card_description p {
+  margin-top: 0px;
+  font-size: 17px;
+}
+
+.fa-mobile-screen-button,
+.fa-list-ul,
+.fa-store {
+  color: #7E7E7E;
+}
+
+.fa-heart {
+  padding-right: 1.5em;
+}
+
+.fa-heart {
+  padding-left: 1em;
+  padding-right: 0em;
+}
+
+.baniere {
+  width: 100%;
+}
+.baniere img {
+  object-position: 50% 60%;
+  object-fit: cover;
+  width: 100%;
+  height: 453px;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  width: 100%;
+  background-color: #FFFFFF;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+header a {
+  position: absolute;
+  left: 4em;
+}
+header h1 {
+  font-family: Shrikhand;
+  font-size: 37px;
+  margin: 0.5em;
+}
+
+main {
+  font-family: Roboto;
+}
+main .localisation {
+  background-color: #EAEAEA;
+}
+main .localisation i,
+main .localisation p {
+  color: #353535;
+}
+main .localisation p {
+  margin: 0.8em;
+  font-size: 16px;
+  font-weight: bold;
+}
+main .presentation {
+  background-color: #F6F6F6;
+  padding-bottom: 2.3em;
+}
+main .presentation h1 {
+  font-size: 40px;
+  margin-bottom: 0.3em;
+}
+main .presentation a {
+  margin-top: 0.7em;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 11px;
+}
+main .fonctionnement {
+  padding: 2em;
+  background-color: #FFFFFF;
+  width: 65%;
+  margin: auto;
+}
+main .fonctionnement .liste_fonctionnement {
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+}
+main .fonctionnement .liste_fonctionnement .fa-store {
+  color: #9356DC;
+}
+main .fonctionnement .liste_fonctionnement a:hover {
+  background-color: #F5EDFF;
+}
+main .fonctionnement .liste_fonctionnement li a {
+  position: relative;
+  padding: 0.5em;
+  margin: 1em;
+  border-radius: 1em;
+  background-color: #F6F6F6;
+  box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  color: black;
+}
+main .fonctionnement .liste_fonctionnement li a .numero {
+  position: absolute;
+  left: -15px;
+  background-color: #9356DC;
+  border-radius: 15px 15px 15px 15px;
+  padding: 5px 10px 5px 10px;
+  color: #FFFFFF;
+  font-size: 14px;
+}
+main .fonctionnement .liste_fonctionnement li a i {
+  padding: 1em;
+  margin-right: 0.5em;
+}
+main .fonctionnement .liste_fonctionnement li a p {
+  font-weight: bold;
+}
+main .restaurants {
+  background-color: #F6F6F6;
+  padding: 1.5em;
+}
+main .menu {
+  background-color: #F6F6F6;
+  width: 65%;
+  margin: auto;
+}
+main .menu .liste_menu {
+  position: relative;
+  background-color: #F6F6F6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  bottom: 7em;
+  border-radius: 1em 1em 0em 0em;
+}
+main .menu .liste_menu .titre_menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: Shrikhand;
+  font-size: 28px;
+}
+main .menu .liste_menu .menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+}
+main .menu .liste_menu .menu h3 {
+  align-self: flex-start;
+  font-weight: 300;
+  border-bottom: 1em solid #99E2D0;
+  border-width: 0.2em;
+  padding-bottom: 0.2em;
+  width: 2.5em;
+}
+main .menu .liste_menu .menu ul {
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  list-style: none;
+  gap: 2em;
+  padding: 0;
+}
+main .menu .liste_menu .menu ul li {
+  display: flex;
+  background-color: white;
+  border-radius: 1em;
+  justify-content: space-between;
+}
+main .menu .liste_menu .menu ul li:hover .description_coche .check {
+  display: flex;
+}
+main .menu .liste_menu .menu ul li .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1em 2em 1em 1em;
+}
+main .menu .liste_menu .menu ul li .description h4 {
+  font-size: 18px;
+  padding-bottom: 0.2em;
+}
+main .menu .liste_menu .menu ul li .description h4,
+main .menu .liste_menu .menu ul li .description p {
+  margin: 0;
+}
+main .menu .liste_menu .menu ul li .description_coche {
+  display: flex;
+}
+main .menu .liste_menu .menu ul li .description_coche p {
+  align-self: flex-end;
+  margin: 0;
+  padding: 0em 1em 1em 0em;
+}
+main .menu .liste_menu .menu ul li .description_coche .check {
+  display: none;
+  align-items: center;
+  padding: 1em;
+  background-color: #99E2D0;
+  color: white;
+  border-radius: 0em 0.5em 0.5em 0em;
+  font-size: 1.5em;
+}
+
+footer {
+  width: 100%;
+  background-color: #353535;
+  color: white;
+}
+footer .footer_description {
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 8em;
+  gap: 2em;
+  font-family: Roboto;
+  margin-right: 8em;
+  list-style: none;
+  text-decoration: none;
+}
+footer .footer_description a {
+  display: flex;
+  text-decoration: none;
+  color: white;
+  align-items: center;
+}
+footer .footer_description h1 {
+  font-family: Shrikhand;
+  font-size: 18px;
+}
+
+/*# sourceMappingURL=index.css.map */
