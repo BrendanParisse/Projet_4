@@ -1,0 +1,36 @@
+body .loader {
+    @extend %column-center;
+    height: 100%;
+    margin: auto;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    background: linear-gradient($violet, $rose);
+    animation: loader 3s;
+    animation-fill-mode: forwards;
+
+    & .titre_loader {
+        @include Logo(58px);
+        color: white;
+    }
+
+    & .barre_chargement {
+        position: relative;
+        height: 10px;
+        width: 35%;
+        border: 5px solid white;
+        border-radius: 15px;
+        background-color: #ffffff;
+    }
+
+    & .chargement {
+        position: absolute;
+        background: linear-gradient($violet, $rose);
+        width: 0px;
+        height: 10px;
+        border-radius: 15px;
+        animation: progression 3s linear;
+        animation-fill-mode: forwards;
+    }
+}

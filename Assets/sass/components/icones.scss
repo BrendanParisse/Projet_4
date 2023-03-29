@@ -4,11 +4,28 @@
     color: $gris;
 }
 
+.heart {
+    padding: 0em 0em 0em 1.5em;
+}
+
 .fa-heart {
     padding-right: 1.5em;
 }
 
-.fa-heart {
-    padding-left: 1em;
-    padding-right: 0em;
+.heart_1 {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 4000ms;
+}
+
+.hearts:hover .heart_1 {
+    background-image: linear-gradient($violet, $rose);
+    opacity: 1;
+}
+
+.hearts:hover .heart_2 {
+    display: none;
 }

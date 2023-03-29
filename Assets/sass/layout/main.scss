@@ -90,7 +90,7 @@ main {
 
     & .restaurants {
         background-color: $beige;
-        padding: 1.5em;
+        padding: 1.5em 1.5em 4em 1.5em;
     }
 
     .menu {
@@ -164,8 +164,6 @@ main {
                             p {
                                 margin: 0;
                             }
-
-
                         }
 
                         .description_coche {
@@ -176,7 +174,6 @@ main {
                                 margin: 0;
                                 padding: 0em 1em 1em 0em;
                             }
-
 
                             .check {
                                 display: none;
@@ -191,13 +188,6 @@ main {
                     }
                 }
             }
-
-
-
-
-
-
-
 
         }
 
