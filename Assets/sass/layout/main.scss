@@ -20,11 +20,24 @@ main {
     & .presentation {
         @extend %column-center;
         background-color: $beige;
-        padding-bottom: 2.3em;
+        padding: 2em 0em 2.3em 0em;
+        text-align: center;
 
         & h1 {
             font-size: 40px;
             margin-bottom: 0.3em;
+
+            @media (max-width: 480px) {
+                width: 70%;
+                font-size: 24px;
+            }
+        }
+
+        & p {
+            @media (max-width: 480px) {
+                width: 90%;
+                font-size: 18px;
+            }
         }
 
         & a {
@@ -33,16 +46,34 @@ main {
         }
     }
 
+
     & .fonctionnement {
         padding: 2em;
         background-color: $blanc;
         width: 65%;
         margin: auto;
 
+        @media (max-width: 480px) {
+            width: 100%;
+            padding: 0;
+        }
+
+        & h1 {
+            @media (max-width: 480px) {
+                padding-left: 1em;
+            }
+        }
+
         & .liste_fonctionnement {
             @extend %grid-center;
             @include grid-template-set-columns(3);
             list-style: none;
+
+            @media (max-width: 480px) {
+                display: flex;
+                flex-direction: column;
+                padding: 0;
+            }
 
             & .fa-store {
                 color: $violet;
@@ -62,8 +93,6 @@ main {
                 box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
                 text-decoration: none;
                 color: black;
-
-
 
                 & .numero {
                     position: absolute;
@@ -97,6 +126,18 @@ main {
         background-color: $beige;
         width: 65%;
         margin: auto;
+
+        & .entrées {
+            @include animation-plat(1s)
+        }
+
+        & .plats {
+            @include animation-plat(2s)
+        }
+
+        & .desserts {
+            @include animation-plat(3s)
+        }
 
         & .liste_menu {
             position: relative;
@@ -144,9 +185,16 @@ main {
                         background-color: white;
                         border-radius: 1em;
                         justify-content: space-between;
+                        overflow: hidden;
 
                         &:hover .description_coche .check {
+                            visibility: visible;
                             display: flex;
+                            transform: translateX(-100px);
+                        }
+
+                        &:hover .description_coche p {
+                            transform: translateX(-50px);
                         }
 
                         & .description {
@@ -173,16 +221,18 @@ main {
                                 align-self: flex-end;
                                 margin: 0;
                                 padding: 0em 1em 1em 0em;
+                                translate: 50px;
+                                transition: transform 2s;
                             }
 
                             .check {
-                                display: none;
-                                align-items: center;
                                 padding: 1em;
                                 background-color: $vert-clair;
                                 color: white;
                                 border-radius: 0em 0.5em 0.5em 0em;
                                 font-size: 1.5em;
+                                translate: 100px;
+                                transition: transform 2s;
                             }
                         }
                     }

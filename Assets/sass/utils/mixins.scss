@@ -10,3 +10,9 @@
     font-family: Shrikhand;
     font-size: $taille;
 }
+
+@mixin animation-plat($delay) {
+    opacity: 0;
+    animation: apparition 3s ease-in-out $delay;
+    animation-fill-mode: forwards;
+}

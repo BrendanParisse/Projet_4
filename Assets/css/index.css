@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 main .fonctionnement .liste_fonctionnement, .liste_card {
@@ -54,6 +55,23 @@ main .presentation, body .loader {
   }
   to {
     visibility: hidden;
+  }
+}
+@keyframes apparition {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
   }
 }
 body .loader {
@@ -119,11 +137,22 @@ body .loader .chargement {
   padding: 0;
   list-style: none;
 }
+@media (max-width: 480px) {
+  .liste_card {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .liste_card .card {
   position: relative;
   border-radius: 1em;
   background-color: #FFFFFF;
   box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 480px) {
+  .liste_card .card {
+    width: 100%;
+  }
 }
 .liste_card .card .Nouveau {
   position: absolute;
@@ -204,7 +233,7 @@ body .loader .chargement {
 }
 
 body {
-  height: 100%;
+  width: 100%;
   margin: 0;
 }
 
@@ -240,11 +269,24 @@ main .localisation p {
 }
 main .presentation {
   background-color: #F6F6F6;
-  padding-bottom: 2.3em;
+  padding: 2em 0em 2.3em 0em;
+  text-align: center;
 }
 main .presentation h1 {
   font-size: 40px;
   margin-bottom: 0.3em;
+}
+@media (max-width: 480px) {
+  main .presentation h1 {
+    width: 70%;
+    font-size: 24px;
+  }
+}
+@media (max-width: 480px) {
+  main .presentation p {
+    width: 90%;
+    font-size: 18px;
+  }
 }
 main .presentation a {
   margin-top: 0.7em;
@@ -256,9 +298,27 @@ main .fonctionnement {
   width: 65%;
   margin: auto;
 }
+@media (max-width: 480px) {
+  main .fonctionnement {
+    width: 100%;
+    padding: 0;
+  }
+}
+@media (max-width: 480px) {
+  main .fonctionnement h1 {
+    padding-left: 1em;
+  }
+}
 main .fonctionnement .liste_fonctionnement {
   grid-template-columns: repeat(3, 1fr);
   list-style: none;
+}
+@media (max-width: 480px) {
+  main .fonctionnement .liste_fonctionnement {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
 }
 main .fonctionnement .liste_fonctionnement .fa-store {
   color: #9356DC;
@@ -300,6 +360,21 @@ main .menu {
   background-color: #F6F6F6;
   width: 65%;
   margin: auto;
+}
+main .menu .entrées {
+  opacity: 0;
+  animation: apparition 3s ease-in-out 1s;
+  animation-fill-mode: forwards;
+}
+main .menu .plats {
+  opacity: 0;
+  animation: apparition 3s ease-in-out 2s;
+  animation-fill-mode: forwards;
+}
+main .menu .desserts {
+  opacity: 0;
+  animation: apparition 3s ease-in-out 3s;
+  animation-fill-mode: forwards;
 }
 main .menu .liste_menu {
   position: relative;
@@ -345,9 +420,15 @@ main .menu .liste_menu .menu ul li {
   background-color: white;
   border-radius: 1em;
   justify-content: space-between;
+  overflow: hidden;
 }
 main .menu .liste_menu .menu ul li:hover .description_coche .check {
+  visibility: visible;
   display: flex;
+  transform: translateX(-100px);
+}
+main .menu .liste_menu .menu ul li:hover .description_coche p {
+  transform: translateX(-50px);
 }
 main .menu .liste_menu .menu ul li .description {
   display: flex;
@@ -370,33 +451,68 @@ main .menu .liste_menu .menu ul li .description_coche p {
   align-self: flex-end;
   margin: 0;
   padding: 0em 1em 1em 0em;
+  translate: 50px;
+  transition: transform 2s;
 }
 main .menu .liste_menu .menu ul li .description_coche .check {
-  display: none;
-  align-items: center;
   padding: 1em;
   background-color: #99E2D0;
   color: white;
   border-radius: 0em 0.5em 0.5em 0em;
   font-size: 1.5em;
+  translate: 100px;
+  transition: transform 2s;
 }
 
 footer {
+  display: flex;
+  align-items: center;
   width: 100%;
   background-color: #353535;
   color: white;
+  justify-content: flex-end;
+}
+@media (max-width: 480px) {
+  footer {
+    flex-direction: column-reverse;
+  }
+}
+footer h1 {
+  font-family: Shrikhand;
+  font-size: 27px;
+  margin-right: 8em;
+}
+@media (max-width: 480px) {
+  footer h1 {
+    margin-bottom: 1em;
+  }
 }
 footer .footer_description {
+  padding-left: 1em;
   margin: 0;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   height: 8em;
   gap: 2em;
   font-family: Roboto;
-  margin-right: 8em;
+  margin-right: 2em;
   list-style: none;
   text-decoration: none;
+}
+@media (max-width: 480px) {
+  footer .footer_description {
+    margin: auto;
+    height: 100%;
+    gap: 0;
+    flex-direction: column;
+    align-items: normal;
+  }
+}
+@media (max-width: 480px) {
+  footer .footer_description .footer_des {
+    display: flex;
+    align-items: center;
+  }
 }
 footer .footer_description a {
   display: flex;
@@ -407,9 +523,12 @@ footer .footer_description a {
 footer .footer_description a i {
   padding-right: 0.5em;
 }
-footer .footer_description h1 {
-  font-family: Shrikhand;
-  font-size: 18px;
+@media (max-width: 480px) {
+  footer .footer_description a p {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
