@@ -24,21 +24,18 @@ main {
         text-align: center;
 
         & h1 {
-            font-size: 40px;
+            font-size: 24px;
             margin-bottom: 0.3em;
 
-            @media (max-width: 480px) {
-                width: 70%;
-                font-size: 24px;
+            @media (min-width: 1024px) {
+                font-size: 40px;
             }
         }
 
         & p {
-            @media (max-width: 480px) {
-                width: 90%;
-                font-size: 18px;
-            }
+            font-size: 18px;
         }
+
 
         & a {
             margin-top: 0.7em;
@@ -48,31 +45,38 @@ main {
 
 
     & .fonctionnement {
-        padding: 2em;
+        padding: 0;
         background-color: $blanc;
-        width: 65%;
+        width: 100%;
         margin: auto;
 
-        @media (max-width: 480px) {
-            width: 100%;
-            padding: 0;
+        @media (min-width: 768px) {
+            width: 75%;
+            padding: 2em;
         }
 
         & h1 {
-            @media (max-width: 480px) {
-                padding-left: 1em;
+            padding-left: 0.75em;
+
+            @media (min-width: 768px) {
+                padding-left: 0em;
             }
         }
 
         & .liste_fonctionnement {
-            @extend %grid-center;
-            @include grid-template-set-columns(3);
+            padding: 0;
+            display: flex;
+            flex-direction: column;
             list-style: none;
+            gap: 2em;
+            align-items: center;
 
-            @media (max-width: 480px) {
-                display: flex;
-                flex-direction: column;
-                padding: 0;
+
+            @media (min-width: 1024px) {
+                display: grid;
+                align-items: center;
+                justify-content: center;
+                @include grid-template-set-columns(3);
             }
 
             & .fa-store {
@@ -83,36 +87,44 @@ main {
                 background-color: $violet-clair;
             }
 
-            & li a {
-                position: relative;
-                @extend %flex-center;
-                padding: 0.5em;
-                margin: 1em;
-                border-radius: 1em;
-                background-color: $beige;
-                box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
-                text-decoration: none;
-                color: black;
+            & li {
+                width: 90%;
 
-                & .numero {
-                    position: absolute;
-                    left: -15px;
-                    background-color: $violet;
-                    border-radius: 15px 15px 15px 15px;
-                    padding: 5px 10px 5px 10px;
-                    color: $blanc;
-                    font-size: 14px;
+                & a {
+                    position: relative;
+                    @extend %flex-center;
+                    padding: 0.5em 2em 0.5em 0em;
+                    border-radius: 1em;
+                    background-color: $beige;
+                    box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
+                    text-decoration: none;
+                    color: black;
+
+                    & .numero {
+                        position: absolute;
+                        left: -15px;
+                        background-color: $violet;
+                        border-radius: 15px 15px 15px 15px;
+                        padding: 5px 10px 5px 10px;
+                        color: $blanc;
+                        font-size: 14px;
+                    }
+
+                    & i {
+                        margin-right: 1em;
+                        padding: 0;
+
+                        @media (min-width: 1024px) {
+                            padding: 1em;
+                            margin-right: 0.5em;
+                        }
+                    }
+
+                    & p {
+                        font-weight: bold;
+                    }
+
                 }
-
-                & i {
-                    padding: 1em;
-                    margin-right: 0.5em;
-                }
-
-                & p {
-                    font-weight: bold;
-                }
-
             }
         }
     }
@@ -124,8 +136,20 @@ main {
 
     .menu {
         background-color: $beige;
-        width: 65%;
+        width: 100%;
         margin: auto;
+        padding-bottom: 2em;
+
+
+        @media screen and (min-width : 768px) and (max-width: 1024px) {
+            width: 85%;
+            padding: 0;
+        }
+
+        @media (min-width: 1025px) {
+            width: 65%;
+            padding: 0;
+        }
 
         & .entrées {
             @include animation-plat(1s)
@@ -146,22 +170,40 @@ main {
             flex-direction: column;
             align-items: center;
             width: 100%;
-            bottom: 7em;
+            bottom: 3em;
             border-radius: 1em 1em 0em 0em;
+
+            @media (min-width: 769px) {
+                bottom: 7em;
+            }
 
             & .titre_menu {
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
+                text-align: center;
+                justify-content: space-evenly;
                 font-family: Shrikhand;
-                font-size: 28px;
+                font-size: 22px;
+                width: 100%;
+
+                @media (min-width: 769px) {
+                    width: 55%;
+                }
             }
+
+
+
+
 
             & .menu {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                width: 75%;
+                width: 95%;
+
+                @media (min-width: 768px) {
+                    width: 75%;
+                }
 
                 h3 {
                     align-self: flex-start;
@@ -170,6 +212,12 @@ main {
                     border-width: 0.2em;
                     padding-bottom: 0.2em;
                     width: 2.5em;
+
+                    @media screen and (min-width : 768px) and (max-width: 1024px) {
+                        align-self: auto;
+                        display: flex;
+                        justify-content: center;
+                    }
                 }
 
                 & ul {
@@ -184,8 +232,27 @@ main {
                         display: flex;
                         background-color: white;
                         border-radius: 1em;
+                        box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
                         justify-content: space-between;
                         overflow: hidden;
+
+                        .description {
+                            padding: 0.75em 0em 0.75em 0.5em;
+
+                            & h4,
+                            p {
+                                margin: 0;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                width: 10em;
+
+
+                                @media (min-width: 769px) {
+                                    width: 18em;
+                                }
+                            }
+                        }
 
                         &:hover .description_coche .check {
                             visibility: visible;
@@ -197,48 +264,38 @@ main {
                             transform: translateX(-50px);
                         }
 
-                        & .description {
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: space-between;
-                            padding: 1em 2em 1em 1em;
-
-                            & h4 {
-                                font-size: 18px;
-                                padding-bottom: 0.2em;
-                            }
-
-                            & h4,
-                            p {
-                                margin: 0;
-                            }
+                        & h4 {
+                            font-size: 18px;
+                            padding-bottom: 0.2em;
                         }
 
-                        .description_coche {
-                            display: flex;
+                    }
 
-                            p {
-                                align-self: flex-end;
-                                margin: 0;
-                                padding: 0em 1em 1em 0em;
-                                translate: 50px;
-                                transition: transform 2s;
-                            }
+                    .description_coche {
+                        display: flex;
 
-                            .check {
-                                padding: 1em;
-                                background-color: $vert-clair;
-                                color: white;
-                                border-radius: 0em 0.5em 0.5em 0em;
-                                font-size: 1.5em;
-                                translate: 100px;
-                                transition: transform 2s;
-                            }
+                        p {
+                            margin: 0;
+                            padding: 0em 1em 0.9em 0em;
+                            align-self: end;
+                            translate: 50px;
+                            transition: transform 2s;
+                        }
+
+                        .check {
+                            padding: 1.1em;
+                            justify-content: center;
+                            align-items: center;
+                            background-color: $vert-clair;
+                            color: white;
+                            border-radius: 0em 0.5em 0.5em 0em;
+                            translate: 100px;
+                            transition: transform 2s;
+                            font-size: 22px;
                         }
                     }
                 }
             }
-
         }
 
     }

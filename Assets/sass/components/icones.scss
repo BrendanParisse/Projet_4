@@ -1,31 +1,35 @@
-.fa-mobile-screen-button,
-.fa-list-ul,
-.fa-store {
-    color: $gris;
+.hearts {
+    & .heart-vide {
+        display: block;
+        transform: scale(1);
+        transition: all 1s;
+    }
+
+    & .heart-plein {
+        display: block;
+        position: absolute;
+        top: 0;
+        transform: scale(0);
+        transition: all 1s;
+        background-color: black;
+        background-image: linear-gradient(0deg, $rose, $violet);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        -moz-text-fill-color: transparent;
+    }
 }
 
-.heart {
-    padding: 0em 0em 0em 1.5em;
-}
+.hearts:hover {
+    & .heart-vide {
+        opacity: 0;
+        transform: scale(0);
 
-.fa-heart {
-    padding-right: 1.5em;
-}
+    }
 
-.heart_1 {
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity 4000ms;
-}
+    & .heart-plein {
+        opacity: 1;
+        transform: scale(1);
 
-.hearts:hover .heart_1 {
-    background-image: linear-gradient($violet, $rose);
-    opacity: 1;
-}
-
-.hearts:hover .heart_2 {
-    display: none;
+    }
 }
