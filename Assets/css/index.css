@@ -505,7 +505,7 @@ main .menu .liste_menu .menu ul li .description p {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  width: 10em;
+  width: 55vw;
 }
 @media (min-width: 769px) {
   main .menu .liste_menu .menu ul li .description h4,
@@ -533,7 +533,7 @@ main .menu .liste_menu .menu ul .description_coche p {
   padding: 0em 1em 0.9em 0em;
   align-self: end;
   translate: 50px;
-  transition: transform 2s;
+  transition: transform 1s;
 }
 main .menu .liste_menu .menu ul .description_coche .check {
   padding: 1.1em;
@@ -543,7 +543,7 @@ main .menu .liste_menu .menu ul .description_coche .check {
   color: white;
   border-radius: 0em 0.5em 0.5em 0em;
   translate: 100px;
-  transition: transform 2s;
+  transition: transform 1s;
   font-size: 22px;
 }
 
