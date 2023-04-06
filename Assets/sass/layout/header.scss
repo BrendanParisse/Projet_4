@@ -1,17 +1,20 @@
 header {
     position: relative;
     @extend %flex-center;
-    width: 100%;
     background-color: $blanc;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 4px;
 
     & a {
         position: absolute;
         left: 0.5em;
         font-size: 22px;
 
-        @media (min-width: 768px) {
+        @media (min-width: 769px) {
             left: 4em;
+        }
+
+        i {
+            color: black;
         }
     }
 

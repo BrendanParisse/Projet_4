@@ -6,34 +6,34 @@ main {
         background-color: $gris-clair;
 
         & i,
-        p {
+        h2 {
             color: $gris-foncé;
         }
 
-        & p {
+        & h2 {
             margin: 0.8em;
-            font-size: 16px;
-            font-weight: bold;
+            font-size: 20px;
         }
     }
 
     & .presentation {
         @extend %column-center;
         background-color: $beige;
-        padding: 2em 0em 2.3em 0em;
+        padding: 1em 0em 2.3em 0em;
         text-align: center;
 
-        & h1 {
+        & h2 {
             font-size: 24px;
             margin-bottom: 0.3em;
 
-            @media (min-width: 1024px) {
+            @media (min-width: 1025px) {
                 font-size: 40px;
             }
         }
 
         & p {
             font-size: 18px;
+            width: 98%;
         }
 
 
@@ -45,22 +45,16 @@ main {
 
 
     & .fonctionnement {
-        padding: 0;
         background-color: $blanc;
-        width: 100%;
         margin: auto;
 
-        @media (min-width: 768px) {
+        @media (min-width: 769px) {
             width: 75%;
             padding: 2em;
         }
 
-        & h1 {
+        & h2 {
             padding-left: 0.75em;
-
-            @media (min-width: 768px) {
-                padding-left: 0em;
-            }
         }
 
         & .liste_fonctionnement {
@@ -71,10 +65,9 @@ main {
             gap: 2em;
             align-items: center;
 
-            @media (min-width: 1024px) {
+            @media (min-width: 1025px) {
+                padding: revert;
                 display: grid;
-                align-items: center;
-                justify-content: center;
                 @include grid-template-set-columns(3);
             }
 
@@ -110,10 +103,9 @@ main {
                     }
 
                     & i {
-                        margin-right: 1em;
                         padding: 0;
 
-                        @media (min-width: 1024px) {
+                        @media (min-width: 1025px) {
                             padding: 1em;
                             margin-right: 0.5em;
                         }
@@ -135,17 +127,17 @@ main {
 
     & .menu {
         background-color: $beige;
-        width: 100%;
         margin: auto;
         padding-bottom: 2em;
 
-        @media screen and (min-width : 768px) and (max-width: 1024px) {
+
+        @media screen and (min-width : 769px) and (max-width: 1024px) {
             width: 85%;
             padding: 0;
         }
 
         @media (min-width: 1025px) {
-            width: 65%;
+            width: 75%;
             padding: 0;
         }
 
@@ -167,7 +159,6 @@ main {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 100%;
             bottom: 3em;
             border-radius: 1em 1em 0em 0em;
 
@@ -178,7 +169,6 @@ main {
             & .titre_menu {
                 display: flex;
                 align-items: center;
-                text-align: center;
                 justify-content: space-evenly;
                 font-family: Shrikhand;
                 font-size: 22px;
@@ -189,107 +179,107 @@ main {
                 }
             }
 
-            & .menu {
+            & .element_menu {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 width: 95%;
 
-                @media (min-width: 768px) {
-                    width: 75%;
+                @media (min-width: 769px) {
+                    width: 60%;
                 }
+            }
 
-                & h3 {
-                    align-self: flex-start;
-                    font-weight: 300;
-                    border-bottom: 1em solid $vert-clair;
-                    border-width: 0.2em;
-                    padding-bottom: 0.2em;
-                    width: 2.5em;
+            & h3 {
+                align-self: flex-start;
+                font-weight: 300;
+                border-bottom: 1em solid $vert-clair;
+                border-width: 0.2em;
+                padding-bottom: 0.2em;
+                width: 2.5em;
 
-                    @media screen and (min-width : 768px) and (max-width: 1024px) {
-                        align-self: auto;
-                        display: flex;
-                        justify-content: center;
-                    }
+                @media screen and (min-width : 769px) and (max-width: 1024px) {
+                    align-self: auto;
+                    display: flex;
+                    justify-content: center;
                 }
+            }
 
-                & ul {
-                    width: 100%;
-                    display: grid;
-                    @include grid-template-set-rows(3);
-                    list-style: none;
-                    gap: 2em;
-                    padding: 0;
+            & ul {
+                display: grid;
+                list-style: none;
+                gap: 2em;
+                padding: 0;
+                width: 100%;
 
-                    & li {
-                        display: flex;
-                        background-color: white;
-                        border-radius: 1em;
-                        box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
-                        justify-content: space-between;
-                        overflow: hidden;
+                & li {
+                    display: flex;
+                    background-color: white;
+                    border-radius: 1em;
+                    box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
+                    justify-content: space-between;
+                    overflow: hidden;
 
-                        .description {
-                            padding: 0.75em 0em 0.75em 0.5em;
+                    .description {
+                        padding: 0.75em 0em 0.75em 0.5em;
 
-                            & h4,
-                            p {
-                                margin: 0;
-                                text-overflow: ellipsis;
-                                overflow: hidden;
-                                white-space: nowrap;
-                                width: 55vw;
+                        & h4,
+                        p {
+                            margin: 0;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            width: 55vw;
 
 
-                                @media (min-width: 769px) {
-                                    width: 18em;
-                                }
+                            @media (min-width: 769px) {
+                                width: 30vw;
                             }
                         }
-
-                        &:hover .description_coche .check {
-                            visibility: visible;
-                            display: flex;
-                            transform: translateX(-100px);
-                        }
-
-                        &:hover .description_coche p {
-                            transform: translateX(-50px);
-                        }
-
-                        & h4 {
-                            font-size: 18px;
-                            padding-bottom: 0.2em;
-                        }
-
                     }
 
-                    & .description_coche {
+                    &:hover .description_coche .check {
+                        visibility: visible;
                         display: flex;
+                        transform: translateX(-100px);
+                    }
 
-                        & p {
-                            margin: 0;
-                            padding: 0em 1em 0.9em 0em;
-                            align-self: end;
-                            translate: 50px;
-                            transition: transform 1s;
-                        }
+                    &:hover .description_coche p {
+                        transform: translateX(-50px);
+                    }
 
-                        & .check {
-                            padding: 1.1em;
-                            justify-content: center;
-                            align-items: center;
-                            background-color: $vert-clair;
-                            color: white;
-                            border-radius: 0em 0.5em 0.5em 0em;
-                            translate: 100px;
-                            transition: transform 1s;
-                            font-size: 22px;
-                        }
+                    & h4 {
+                        font-size: 18px;
+                        padding-bottom: 0.2em;
+                    }
+
+                }
+
+                & .description_coche {
+                    display: flex;
+
+                    & p {
+                        margin: 0;
+                        padding: 0em 1em 0.9em 0em;
+                        align-self: end;
+                        translate: 50px;
+                        transition: transform 1s;
+                    }
+
+                    & .check {
+                        padding: 1.1em;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: $vert-clair;
+                        color: white;
+                        border-radius: 0em 0.5em 0.5em 0em;
+                        translate: 100px;
+                        transition: transform 1s;
+                        font-size: 22px;
                     }
                 }
             }
+
         }
 
     }
