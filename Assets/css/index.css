@@ -14,6 +14,32 @@ main .presentation, body .loader {
   justify-content: center;
 }
 
+@keyframes anime {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 90%;
+  }
+}
+@keyframes anime_media {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 45%;
+  }
+}
+@keyframes titre_animation {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 @keyframes progression {
   0% {
     width: 0%;
@@ -35,17 +61,17 @@ main .presentation, body .loader {
   from {
     visibility: visible;
   }
-  70% {
+  80% {
     opacity: 1;
   }
-  80% {
+  90% {
+    opacity: 0.8;
+  }
+  95% {
     opacity: 0.6;
   }
-  90% {
-    opacity: 0.4;
-  }
   100% {
-    opacity: 0.2;
+    opacity: 0.4;
   }
   to {
     visibility: hidden;
@@ -79,15 +105,41 @@ body .loader {
   animation: loader 3s;
   animation-fill-mode: forwards;
 }
+body .loader .box_loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  width: 90%;
+  height: 25%;
+  background: linear-gradient(#9356DC, #FF79DA);
+  box-shadow: #7E7E7E 0px 5px 11px;
+  animation: anime 2s;
+}
+@media (min-width: 769px) {
+  body .loader .box_loader {
+    width: 45%;
+    height: 35%;
+    animation: anime_media 2s;
+  }
+}
 body .loader .titre_loader {
   font-family: Shrikhand;
-  font-size: 58px;
+  font-size: 10vw;
   color: white;
+  animation: titre_animation 2s;
+}
+@media (min-width: 769px) {
+  body .loader .titre_loader {
+    font-family: Shrikhand;
+    font-size: 5vw;
+  }
 }
 body .loader .barre_chargement {
   position: relative;
   height: 10px;
-  width: 35%;
+  width: 80%;
   border: 5px solid white;
   border-radius: 15px;
   background-color: #ffffff;
@@ -98,7 +150,7 @@ body .loader .chargement {
   width: 0px;
   height: 10px;
   border-radius: 15px;
-  animation: progression 3s linear;
+  animation: progression 2s linear;
   animation-fill-mode: forwards;
 }
 
@@ -527,7 +579,6 @@ main .menu .liste_menu ul .description_coche p {
   margin: 0;
   padding: 0em 1em 0.9em 0em;
   align-self: end;
-  translate: 50px;
   transition: transform 1s;
 }
 main .menu .liste_menu ul .description_coche .check {
@@ -537,7 +588,6 @@ main .menu .liste_menu ul .description_coche .check {
   background-color: #99E2D0;
   color: white;
   border-radius: 0em 0.5em 0.5em 0em;
-  translate: 100px;
   transition: transform 1s;
   font-size: 22px;
 }

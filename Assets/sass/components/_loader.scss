@@ -10,15 +10,39 @@ body .loader {
     animation: loader 3s;
     animation-fill-mode: forwards;
 
+    & .box_loader {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        width: 90%;
+        height: 25%;
+        background: linear-gradient($violet, $rose);
+        box-shadow: $gris 0px 5px 11px;
+        animation: anime 2s;
+
+        @media (min-width: 769px) {
+            width: 45%;
+            height: 35%;
+            animation: anime_media 2s;
+        }
+    }
+
     & .titre_loader {
-        @include Logo(58px);
+        @include Logo(10vw);
         color: white;
+        animation: titre_animation 2s;
+
+        @media (min-width: 769px) {
+            @include Logo(5vw);
+        }
     }
 
     & .barre_chargement {
         position: relative;
         height: 10px;
-        width: 35%;
+        width: 80%;
         border: 5px solid white;
         border-radius: 15px;
         background-color: #ffffff;
@@ -30,7 +54,7 @@ body .loader {
         width: 0px;
         height: 10px;
         border-radius: 15px;
-        animation: progression 3s linear;
+        animation: progression 2s linear;
         animation-fill-mode: forwards;
     }
 }

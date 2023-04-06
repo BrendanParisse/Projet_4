@@ -36,13 +36,11 @@ main {
             width: 98%;
         }
 
-
         & a {
             margin-top: 0.7em;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 11px;
         }
     }
-
 
     & .fonctionnement {
         background-color: $blanc;
@@ -262,7 +260,6 @@ main {
                         margin: 0;
                         padding: 0em 1em 0.9em 0em;
                         align-self: end;
-                        translate: 50px;
                         transition: transform 1s;
                     }
 
@@ -273,7 +270,6 @@ main {
                         background-color: $vert-clair;
                         color: white;
                         border-radius: 0em 0.5em 0.5em 0em;
-                        translate: 100px;
                         transition: transform 1s;
                         font-size: 22px;
                     }
