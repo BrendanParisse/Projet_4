@@ -63,9 +63,13 @@ main {
             gap: 2em;
             align-items: center;
 
-            @media (min-width: 1025px) {
+            @media (min-width : 769px) {
                 padding: revert;
                 display: grid;
+                @include grid-template-set-columns(2);
+            }
+
+            @media (min-width: 1025px) {
                 @include grid-template-set-columns(3);
             }
 
@@ -77,18 +81,30 @@ main {
                 background-color: $violet-clair;
             }
 
+            & .Deguster {
+                @media screen and (min-width : 769px) and (max-width: 1024px) {
+                    grid-column: 3/1;
+                    margin: auto;
+                    width: 43%;
+                }
+            }
+
             & li {
                 width: 90%;
 
                 & a {
                     position: relative;
-                    @extend %flex-center;
+                    @extend %flex-space;
                     padding: 0.5em 2em 0.5em 0em;
                     border-radius: 1em;
                     background-color: $beige;
                     box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
                     text-decoration: none;
                     color: black;
+
+                    @media (min-width: 769px) {
+                        justify-content: center;
+                    }
 
                     & .numero {
                         position: absolute;
@@ -102,15 +118,29 @@ main {
 
                     & i {
                         padding: 0;
+                        margin-left: 16vw;
+
+                        @media screen and (min-width : 769px) and (max-width: 1024px) {
+                            margin-left: 0vw;
+                            margin-right: 1em;
+                        }
 
                         @media (min-width: 1025px) {
-                            padding: 1em;
-                            margin-right: 0.5em;
+                            margin: 0em 1.5em 0em 1.5em;
                         }
                     }
 
                     & p {
+                        width: 60%;
                         font-weight: bold;
+
+                        @media screen and (min-width : 769px) and (max-width: 1024px) {
+                            width: 67%;
+                        }
+
+                        @media (min-width: 1025px) {
+                            width: initial;
+                        }
                     }
 
                 }
@@ -218,7 +248,7 @@ main {
                     justify-content: space-between;
                     overflow: hidden;
 
-                    .description {
+                    & .description {
                         padding: 0.75em 0em 0.75em 0.5em;
 
                         & h4,
@@ -239,11 +269,11 @@ main {
                     &:hover .description_coche .check {
                         visibility: visible;
                         display: flex;
-                        transform: translateX(-100px);
+                        transform: translateX(0px);
                     }
 
                     &:hover .description_coche p {
-                        transform: translateX(-50px);
+                        transform: translateX(0px);
                     }
 
                     & h4 {
@@ -261,6 +291,7 @@ main {
                         padding: 0em 1em 0.9em 0em;
                         align-self: end;
                         transition: transform 1s;
+                        transform: translate(50px);
                     }
 
                     & .check {
@@ -272,6 +303,8 @@ main {
                         border-radius: 0em 0.5em 0.5em 0em;
                         transition: transform 1s;
                         font-size: 22px;
+                        transform: translate(100px);
+                        cursor: pointer;
                     }
                 }
             }

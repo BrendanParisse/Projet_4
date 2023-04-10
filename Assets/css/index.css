@@ -1,10 +1,16 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-main .fonctionnement .liste_fonctionnement li a, main .localisation, header {
+main .localisation, header {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+main .fonctionnement .liste_fonctionnement li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 main .presentation, body .loader {
@@ -256,16 +262,16 @@ body .loader .chargement {
 .hearts .heart-vide {
   display: block;
   transform: scale(1);
-  transition: all 1s;
+  transition: transform 1s;
 }
 .hearts .heart-plein {
   display: block;
   position: absolute;
   top: 0;
   transform: scale(0);
-  transition: all 1s;
+  transition: transform 1s;
   background-color: black;
-  background-image: linear-gradient(0deg, #FF79DA, #9356DC);
+  background-image: linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -273,26 +279,10 @@ body .loader .chargement {
 }
 
 .hearts:hover .heart-vide {
-  opacity: 0;
   transform: scale(0);
 }
 .hearts:hover .heart-plein {
-  opacity: 1;
   transform: scale(1);
-}
-
-.i_mobile {
-  font-size: 16px;
-  margin-right: 0.7em;
-}
-
-.i_list {
-  font-size: 16px;
-  margin-right: 1.5em;
-}
-
-.i_store {
-  margin-right: 1em;
 }
 
 .baniere img {
@@ -393,10 +383,15 @@ main .fonctionnement .liste_fonctionnement {
   gap: 2em;
   align-items: center;
 }
-@media (min-width: 1025px) {
+@media (min-width: 769px) {
   main .fonctionnement .liste_fonctionnement {
     padding: revert;
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1025px) {
+  main .fonctionnement .liste_fonctionnement {
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -405,6 +400,13 @@ main .fonctionnement .liste_fonctionnement .fa-store {
 }
 main .fonctionnement .liste_fonctionnement a:hover {
   background-color: #F5EDFF;
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  main .fonctionnement .liste_fonctionnement .Deguster {
+    grid-column: 3/1;
+    margin: auto;
+    width: 43%;
+  }
 }
 main .fonctionnement .liste_fonctionnement li {
   width: 90%;
@@ -418,6 +420,11 @@ main .fonctionnement .liste_fonctionnement li a {
   text-decoration: none;
   color: black;
 }
+@media (min-width: 769px) {
+  main .fonctionnement .liste_fonctionnement li a {
+    justify-content: center;
+  }
+}
 main .fonctionnement .liste_fonctionnement li a .numero {
   position: absolute;
   left: -15px;
@@ -429,15 +436,32 @@ main .fonctionnement .liste_fonctionnement li a .numero {
 }
 main .fonctionnement .liste_fonctionnement li a i {
   padding: 0;
+  margin-left: 16vw;
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  main .fonctionnement .liste_fonctionnement li a i {
+    margin-left: 0vw;
+    margin-right: 1em;
+  }
 }
 @media (min-width: 1025px) {
   main .fonctionnement .liste_fonctionnement li a i {
-    padding: 1em;
-    margin-right: 0.5em;
+    margin: 0em 1.5em 0em 1.5em;
   }
 }
 main .fonctionnement .liste_fonctionnement li a p {
+  width: 60%;
   font-weight: bold;
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  main .fonctionnement .liste_fonctionnement li a p {
+    width: 67%;
+  }
+}
+@media (min-width: 1025px) {
+  main .fonctionnement .liste_fonctionnement li a p {
+    width: initial;
+  }
 }
 main .restaurants {
   background-color: #F6F6F6;
@@ -563,10 +587,10 @@ main .menu .liste_menu ul li .description p {
 main .menu .liste_menu ul li:hover .description_coche .check {
   visibility: visible;
   display: flex;
-  transform: translateX(-100px);
+  transform: translateX(0px);
 }
 main .menu .liste_menu ul li:hover .description_coche p {
-  transform: translateX(-50px);
+  transform: translateX(0px);
 }
 main .menu .liste_menu ul li h4 {
   font-size: 18px;
@@ -580,6 +604,7 @@ main .menu .liste_menu ul .description_coche p {
   padding: 0em 1em 0.9em 0em;
   align-self: end;
   transition: transform 1s;
+  transform: translate(50px);
 }
 main .menu .liste_menu ul .description_coche .check {
   padding: 1.1em;
@@ -590,6 +615,8 @@ main .menu .liste_menu ul .description_coche .check {
   border-radius: 0em 0.5em 0.5em 0em;
   transition: transform 1s;
   font-size: 22px;
+  transform: translate(100px);
+  cursor: pointer;
 }
 
 footer {

@@ -2,7 +2,7 @@
     & .heart-vide {
         display: block;
         transform: scale(1);
-        transition: all 1s;
+        transition: transform 1s;
     }
 
     & .heart-plein {
@@ -10,9 +10,9 @@
         position: absolute;
         top: 0;
         transform: scale(0);
-        transition: all 1s;
+        transition: transform 1s;
         background-color: black;
-        background-image: linear-gradient(0deg, $rose, $violet);
+        background-image: linear-gradient($violet, $rose);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -22,27 +22,10 @@
 
 .hearts:hover {
     & .heart-vide {
-        opacity: 0;
         transform: scale(0);
     }
 
     & .heart-plein {
-        opacity: 1;
         transform: scale(1);
     }
-}
-
-
-.i_mobile {
-    font-size: 16px;
-    margin-right: 0.7em;
-}
-
-.i_list {
-    font-size: 16px;
-    margin-right: 1.5em;
-}
-
-.i_store {
-    margin-right: 1em;
 }

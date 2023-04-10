@@ -24,12 +24,12 @@
             width: 100%;
         }
 
-        a {
+        & a {
             text-decoration: none;
             color: black;
         }
 
-        .Nouveau {
+        & .Nouveau {
             position: absolute;
             top: 0.5em;
             right: 0.8em;
@@ -41,11 +41,11 @@
             font-weight: 600;
         }
 
-        .Photo_2 {
+        & .Photo_2 {
             object-position: 50% 60%;
         }
 
-        img {
+        & img {
             object-position: bottom;
             object-fit: cover;
             width: 100%;
@@ -54,18 +54,18 @@
         }
 
 
-        .card_description {
+        & .card_description {
             position: relative;
             padding-left: 0.5em;
             align-items: center;
             justify-content: space-between;
 
-            h2 {
+            & h2 {
                 margin: 0.5em 0px 0.5em 0px;
                 font-size: 18px;
             }
 
-            p {
+            & p {
                 margin-top: 0px;
                 font-size: 17px;
             }

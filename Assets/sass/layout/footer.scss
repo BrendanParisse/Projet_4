@@ -54,7 +54,7 @@ footer {
             align-items: center;
         }
 
-        a {
+        & a {
             display: flex;
             text-decoration: none;
             color: white;
@@ -68,7 +68,7 @@ footer {
                 padding-right: 0.5em;
             }
 
-            p {
+            & p {
                 margin-top: 0;
                 display: flex;
                 align-items: center;
