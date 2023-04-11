@@ -108,7 +108,7 @@ body .loader {
   right: 0;
   z-index: 20;
   background: linear-gradient(#9356DC, #FF79DA);
-  animation: loader 3s;
+  animation: loader 3s ease-in;
   animation-fill-mode: forwards;
 }
 body .loader .box_loader {

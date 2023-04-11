@@ -7,7 +7,7 @@ body .loader {
     right: 0;
     z-index: 20;
     background: linear-gradient($violet, $rose);
-    animation: loader 3s;
+    animation: loader 3s ease-in;
     animation-fill-mode: forwards;
 
     & .box_loader {
