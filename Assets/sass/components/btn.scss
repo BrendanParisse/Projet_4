@@ -3,6 +3,8 @@
     color: $blanc;
     transition: 250ms;
     text-decoration: none;
+    box-shadow: 0 4px 11px rgba(0, 0, 0, 0.28);
+
 
     &--gradient {
         background: linear-gradient($rose, $violet);
@@ -14,7 +16,7 @@
 
     &:hover {
         opacity: 0.8;
-        box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 11px rgba(0, 0, 0, 0.42);
     }
 }
 

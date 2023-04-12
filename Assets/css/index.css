@@ -165,6 +165,7 @@ body .loader .chargement {
   color: #FFFFFF;
   transition: 250ms;
   text-decoration: none;
+  box-shadow: 0 4px 11px rgba(0, 0, 0, 0.28);
 }
 .btn--gradient {
   background: linear-gradient(#FF79DA, #9356DC);
@@ -174,12 +175,50 @@ body .loader .chargement {
 }
 .btn:hover {
   opacity: 0.8;
-  box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 11px rgba(0, 0, 0, 0.42);
 }
 
 .btn_commander {
   position: relative;
   top: 3em;
+}
+
+.hearts .heart-vide {
+  display: block;
+  transform: scale(1);
+  transition: transform 1s;
+}
+.hearts .heart-plein {
+  display: block;
+  position: absolute;
+  top: 0;
+  transform: scale(0);
+  transition: transform 1s;
+  background-color: black;
+  background-image: linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.hearts:hover .heart-vide {
+  transform: scale(0);
+}
+.hearts:hover .heart-plein {
+  transform: scale(1);
+}
+
+.baniere img {
+  object-position: 50% 60%;
+  object-fit: cover;
+  width: 100%;
+  height: 270px;
+}
+@media (min-width: 769px) {
+  .baniere img {
+    height: 453px;
+  }
 }
 
 .liste_card {
@@ -259,44 +298,6 @@ body .loader .chargement {
   cursor: pointer;
 }
 
-.hearts .heart-vide {
-  display: block;
-  transform: scale(1);
-  transition: transform 1s;
-}
-.hearts .heart-plein {
-  display: block;
-  position: absolute;
-  top: 0;
-  transform: scale(0);
-  transition: transform 1s;
-  background-color: black;
-  background-image: linear-gradient(#9356DC, #FF79DA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  -moz-text-fill-color: transparent;
-}
-
-.hearts:hover .heart-vide {
-  transform: scale(0);
-}
-.hearts:hover .heart-plein {
-  transform: scale(1);
-}
-
-.baniere img {
-  object-position: 50% 60%;
-  object-fit: cover;
-  width: 100%;
-  height: 270px;
-}
-@media (min-width: 769px) {
-  .baniere img {
-    height: 453px;
-  }
-}
-
 body {
   width: 100%;
   margin: 0;
@@ -360,7 +361,6 @@ main .presentation p {
 }
 main .presentation a {
   margin-top: 0.7em;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 11px;
 }
 main .fonctionnement {
   background-color: #FFFFFF;
