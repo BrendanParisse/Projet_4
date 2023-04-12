@@ -583,7 +583,6 @@ main .menu .liste_menu ul li .description p {
   }
 }
 main .menu .liste_menu ul li:hover .description_coche .check {
-  visibility: visible;
   display: flex;
   transform: translateX(0px);
 }
