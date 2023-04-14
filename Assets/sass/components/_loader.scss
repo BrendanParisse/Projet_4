@@ -22,7 +22,7 @@ body .loader {
         box-shadow: $gris 0px 5px 11px;
         animation: anime 2s;
 
-        @media (min-width: 769px) {
+        @media (min-width: 768px) {
             width: 45%;
             height: 35%;
             animation: anime_media 2s;
@@ -34,7 +34,7 @@ body .loader {
         color: white;
         animation: titre_animation 2s;
 
-        @media (min-width: 769px) {
+        @media (min-width: 768px) {
             @include Logo(5vw);
         }
     }

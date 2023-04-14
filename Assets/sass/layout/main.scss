@@ -45,7 +45,7 @@ main {
         background-color: $blanc;
         margin: auto;
 
-        @media (min-width: 769px) {
+        @media (min-width: 768px) {
             width: 75%;
             padding: 2em;
         }
@@ -62,7 +62,7 @@ main {
             gap: 2em;
             align-items: center;
 
-            @media (min-width : 769px) {
+            @media (min-width : 768px) {
                 padding: revert;
                 display: grid;
                 @include grid-template-set-columns(2);
@@ -70,6 +70,12 @@ main {
 
             @media (min-width: 1025px) {
                 @include grid-template-set-columns(3);
+            }
+
+            & .icone_menu,
+            .icone_deguster,
+            .icone_restaurant {
+                color: $gris;
             }
 
             & .f_menu:hover .icone_menu {
@@ -89,7 +95,7 @@ main {
             }
 
             & .f_deguster {
-                @media screen and (min-width : 769px) and (max-width: 1024px) {
+                @media screen and (min-width : 768px) and (max-width: 1024px) {
                     grid-column: 3/1;
                     margin: auto;
                     width: 43%;
@@ -109,7 +115,7 @@ main {
                     text-decoration: none;
                     color: black;
 
-                    @media (min-width: 769px) {
+                    @media (min-width: 768px) {
                         justify-content: center;
                     }
 
@@ -127,7 +133,7 @@ main {
                         padding: 0;
                         margin-left: 16vw;
 
-                        @media screen and (min-width : 769px) and (max-width: 1024px) {
+                        @media screen and (min-width : 768px) and (max-width: 1024px) {
                             margin-left: 0vw;
                             margin-right: 1em;
                         }
@@ -141,7 +147,7 @@ main {
                         width: 60%;
                         font-weight: bold;
 
-                        @media screen and (min-width : 769px) and (max-width: 1024px) {
+                        @media screen and (min-width : 768px) and (max-width: 1024px) {
                             width: 67%;
                         }
 
@@ -166,7 +172,7 @@ main {
         padding-bottom: 2em;
 
 
-        @media screen and (min-width : 769px) and (max-width: 1024px) {
+        @media screen and (min-width : 768px) and (max-width: 1024px) {
             width: 85%;
             padding: 0;
         }
@@ -197,7 +203,7 @@ main {
             bottom: 3em;
             border-radius: 1em 1em 0em 0em;
 
-            @media (min-width: 769px) {
+            @media (min-width: 768px) {
                 bottom: 7em;
             }
 
@@ -209,7 +215,7 @@ main {
                 font-size: 22px;
                 width: 100%;
 
-                @media (min-width: 769px) {
+                @media (min-width: 768px) {
                     width: 55%;
                 }
             }
@@ -220,7 +226,7 @@ main {
                 align-items: center;
                 width: 95%;
 
-                @media (min-width: 769px) {
+                @media (min-width: 768px) {
                     width: 60%;
                 }
             }
@@ -233,7 +239,7 @@ main {
                 padding-bottom: 0.2em;
                 width: 2.5em;
 
-                @media screen and (min-width : 769px) and (max-width: 1024px) {
+                @media screen and (min-width : 768px) and (max-width: 1024px) {
                     align-self: auto;
                     display: flex;
                     justify-content: center;
@@ -267,7 +273,7 @@ main {
                             width: 55vw;
 
 
-                            @media (min-width: 769px) {
+                            @media (min-width: 768px) {
                                 width: 30vw;
                             }
                         }
