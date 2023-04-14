@@ -183,6 +183,10 @@ body .loader .chargement {
   top: 3em;
 }
 
+.hearts {
+  position: relative;
+  cursor: pointer;
+}
 .hearts .heart-vide {
   display: block;
   transition: transform 1s;
@@ -393,14 +397,20 @@ main .fonctionnement .liste_fonctionnement {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-main .fonctionnement .liste_fonctionnement .fa-store {
+main .fonctionnement .liste_fonctionnement .f_menu:hover .icone_menu {
+  color: #9356DC;
+}
+main .fonctionnement .liste_fonctionnement .f_deguster:hover .icone_deguster {
+  color: #9356DC;
+}
+main .fonctionnement .liste_fonctionnement .f_restaurant:hover .icone_restaurant {
   color: #9356DC;
 }
 main .fonctionnement .liste_fonctionnement a:hover {
   background-color: #F5EDFF;
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  main .fonctionnement .liste_fonctionnement .Deguster {
+  main .fonctionnement .liste_fonctionnement .f_deguster {
     grid-column: 3/1;
     margin: auto;
     width: 43%;

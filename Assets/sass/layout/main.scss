@@ -72,7 +72,15 @@ main {
                 @include grid-template-set-columns(3);
             }
 
-            & .fa-store {
+            & .f_menu:hover .icone_menu {
+                color: $violet;
+            }
+
+            & .f_deguster:hover .icone_deguster {
+                color: $violet;
+            }
+
+            & .f_restaurant:hover .icone_restaurant {
                 color: $violet;
             }
 
@@ -80,7 +88,7 @@ main {
                 background-color: $violet-clair;
             }
 
-            & .Deguster {
+            & .f_deguster {
                 @media screen and (min-width : 769px) and (max-width: 1024px) {
                     grid-column: 3/1;
                     margin: auto;

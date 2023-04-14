@@ -1,4 +1,7 @@
 .hearts {
+    position: relative;
+    cursor: pointer;
+
     & .heart-vide {
         display: block;
         transition: transform 1s;
